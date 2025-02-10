@@ -4,8 +4,8 @@
       <Logo class="mt-2" />
       <QR />
       <Date />
-      <KvitteringsTaeller />
-      <ItemList />
+      <KvitteringsTaeller :nummer="data!.nummer"/>
+      <ItemList :data="data!" />
       <Barcode />
       <Scan />
       <URL />
@@ -25,5 +25,9 @@ useHead({
     { rel: 'manifest', href: '/site.webmanifest' },
   ],
   meta: [{ name: 'apple-mobile-web-app-title', content: 'Retskaffen' }],
+})
+
+const { data } = await useFetch('/api/kvitteringer').catch((cause) => {
+  throw new Error('KRITISK TILSTAND; INGEN ELEKTRONISK DATA AT BEHANDLE', { cause })
 })
 </script>

@@ -1,37 +1,14 @@
 <script lang="ts" setup>
-const FornuftigeIndkøb: Array<[name: string, price: number, count?: number]> = [
-  ['A.M.O.C Yunnan Gesha (100g)', 217.08, 3],
-  ['Rum Baba Coco Brazil', 95.56],
-  ['Datura HLE Noria Washed (100g)', 518.00],
-  ['SEY Elida (125g)', 587.72+80, 2],
-  ['Coffee Collective Takesi (120g)', 300],
-  ['Buddhas Kafferösteri Julebox', 587.34],
-  ['Mazelab Altieri Geisha (50g)', 261.07],
-]
-
-const tilfældigtElement = <T>(a: readonly T[]): T => a[Math.floor(Math.random() * a.length)]
-const tilfældiggørListe = <T>(a: readonly T[]): T[] => a.toSorted(() => Math.random() - 0.5)
-const tilfældiggørAntal = <T>(a: readonly T[]): number =>
-  Math.floor(
-    Math.random() *(
-    a.length - (Math.floor(a.length/2))))
-    + Math.ceil(a.length/2)
-
-const KvitteringsEmner = ref(tilfældiggørListe(FornuftigeIndkøb).slice(0, tilfældiggørAntal(FornuftigeIndkøb)))
-
-const betalingsMidler = [
-  'Kontant',
-  'Betalingskort',
-  'Kreditkort',
-  'Gavekort',
-  'Kryptovaluta',
-  'Matadorsedler',
-  'Salte tårer'
-] as const
-
-const total = computed(() => KvitteringsEmner.value.reduce((acc, e) => e[1]*(e[2] ?? 1) + acc, 0))
-const moms = computed(() => total.value*0.2)
-const momsBasis = computed(() => total.value*0.8)
+const { data } = defineProps<{
+  data: {
+    total: number
+    moms: number
+    momsBasis: number
+    betalingsMiddel: string
+    emner: Array<[name: string, price: number, count?: number]>
+    nummer: number
+  }
+}>()
 </script>
 
 <template>
@@ -44,19 +21,19 @@ const momsBasis = computed(() => total.value*0.8)
     </div>
     <ItemSpacer />
 
-    <ItemLine v-for="[name, price, count], key in KvitteringsEmner" :key  :name :price :count />
+    <ItemLine v-for="[name, price, count], key in data.emner" :key  :name :price :count />
     <ItemSpacer />
     <div class="flex justify-between text-md/0">
       <div class="font-bold">TOTAL</div>
-      <div class="text-right font-bold">{{ useDanskPris(total) }} kr</div>
+      <div class="text-right font-bold">{{ useDanskPris(data.total) }} kr</div>
     </div>
     <div class="flex justify-between text-md/0 mb-4">
-      <div>{{tilfældigtElement(betalingsMidler)}}</div>
-      <div class="text-right">{{ useDanskPris(total) }} kr</div>
+      <div>{{ data.betalingsMiddel }}</div>
+      <div class="text-right">{{ useDanskPris(data.total) }} kr</div>
     </div>
     <div class="flex justify-between text-md/0">
-      <div>Moms 25% ({{ useDanskPris(momsBasis) }}) </div>
-      <div class="text-right">{{ useDanskPris(moms) }} kr</div>
+      <div>Moms 25% ({{ useDanskPris(data.momsBasis) }}) </div>
+      <div class="text-right">{{ useDanskPris(data.moms) }} kr</div>
     </div>
     <ItemSpacer />
     <div class="text-center w-40 mx-auto mt-2 mb-6">Tak fordi du benyttede selvscanning på Retskaffen</div>
