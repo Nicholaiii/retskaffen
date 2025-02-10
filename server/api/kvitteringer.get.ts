@@ -10,6 +10,7 @@ const FornuftigeIndkøb: Array<[name: string, price: number, count?: number]> = 
   ['Special Guests Lost Origin Lot 71', 272],
   ['Rozali Janson Natural Gesha 201 (100g)', 267, 2],
   ['Ukendt, forsvundet kinesisk Gesha', 297.09],
+  ['La Cabra HLP (250g)', 98.3333334, 3]
 ]
 
 const betalingsMidler = [
