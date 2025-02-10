@@ -1,0 +1,22 @@
+{
+  "name": "retskaffen",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxt/fonts": "0.10.3",
+    "@nuxt/ui": "3.0.0-alpha.12",
+    "@nuxthub/core": "0.8.17",
+    "@vueuse/nuxt": "12.5.0",
+    "nuxt": "^3.15.4",
+    "vue": "latest"
+  },
+  "packageManager": "pnpm@9.15.3+sha512.1f79bc245a66eb0b07c5d4d83131240774642caaa86ef7d0434ab47c0d16f66b04e21e0c086eb61e62c77efc4d7f7ec071afad3796af64892fae66509173893a"
+}

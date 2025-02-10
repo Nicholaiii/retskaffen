@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+:root {
+  --ui-radius: var(--radius-none);
+  --ui-border: none;
+}
+
+body {
+  font-family: "VT323", monospace;
+  color: #1e1d1d;
+  background: var(--color-neutral-200);
+}
