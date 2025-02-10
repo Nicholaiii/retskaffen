@@ -1,6 +1,6 @@
 <template>
   <UApp>
-    <UCard class="mx-auto mt-10 bg-neutral-100 w-96 drop-shadow-lg border-none">
+    <UCard class="mx-auto mt-4 lg:mt-10 bg-neutral-100 w-96 drop-shadow-lg border-none">
       <Logo class="mt-2" />
       <QR />
       <Date />
