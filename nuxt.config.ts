@@ -8,6 +8,11 @@ export default defineNuxtConfig({
     database: true
   },
   nitro: {
+    routeRules: {
+      '/discord': {
+        redirect: 'https://discord.com/invite/UggVzyv3An'
+      },
+    },
     experimental: {
       tasks: true
     }
