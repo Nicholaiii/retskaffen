@@ -3,12 +3,21 @@ const FornuftigeIndkøb: Array<[name: string, price: number, count?: number]> = 
   ['A.M.O.C Yunnan Gesha (100g)', 217.08, 3],
   ['Rum Baba Coco Brazil', 95.56],
   ['Datura HLE Noria Washed (100g)', 518.00],
+  ['SEY Elida (125g)', 587.72+80, 2],
   ['Coffee Collective Takesi (120g)', 300],
   ['Buddhas Kafferösteri Julebox', 587.34],
-  ['Mazelab Altieri Geisha (50g)', 261.07]
+  ['Mazelab Altieri Geisha (50g)', 261.07],
 ]
 
 const tilfældigtElement = <T>(a: readonly T[]): T => a[Math.floor(Math.random() * a.length)]
+const tilfældiggørListe = <T>(a: readonly T[]): T[] => a.toSorted(() => Math.random() - 0.5)
+const tilfældiggørAntal = <T>(a: readonly T[]): number =>
+  Math.floor(
+    Math.random() *(
+    a.length - (Math.floor(a.length/2))))
+    + Math.ceil(a.length/2)
+
+const KvitteringsEmner = tilfældiggørListe(FornuftigeIndkøb).slice(0, tilfældiggørAntal(FornuftigeIndkøb))
 
 const betalingsMidler = [
   'Kontant',
@@ -35,7 +44,7 @@ const momsBasis = computed(() => total*0.8)
     </div>
     <ItemSpacer />
 
-    <ItemLine v-for="[name, price, count], key in FornuftigeIndkøb" :key  :name :price :count />
+    <ItemLine v-for="[name, price, count], key in KvitteringsEmner" :key  :name :price :count />
     <ItemSpacer />
     <div class="flex justify-between text-md/0">
       <div class="font-bold">TOTAL</div>
