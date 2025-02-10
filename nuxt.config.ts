@@ -4,4 +4,7 @@ export default defineNuxtConfig({
   modules: ["@nuxt/ui", "@vueuse/nuxt", '@nuxthub/core'],
   compatibilityDate: "2025-02-09",
   css: ['~/assets/css/main.css'],
+  hub: {
+    database: true
+  }
 })

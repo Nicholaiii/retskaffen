@@ -1,10 +1,11 @@
 <script lang="ts" setup>
 const FornuftigeIndkøb: Array<[name: string, price: number, count?: number]> = [
-  ['A.M.O.C Yunnan Gesha', 217.08, 3],
+  ['A.M.O.C Yunnan Gesha (100g)', 217.08, 3],
   ['Rum Baba Coco Brazil', 95.56],
-  ['Datura HLE Noria Washed', 518.00],
-  ['Coffee Collective Takesi', 300],
-  ['Buddhas Kafferösteri Julebox', 587.34]
+  ['Datura HLE Noria Washed (100g)', 518.00],
+  ['Coffee Collective Takesi (120g)', 300],
+  ['Buddhas Kafferösteri Julebox', 587.34],
+  ['Mazelab Altieri Geisha (50g)', 261.07]
 ]
 
 const tilfældigtElement = <T>(a: T[]): T => a[Math.floor(Math.random() * a.length)]

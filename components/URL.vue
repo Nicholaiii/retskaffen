@@ -1,8 +1,9 @@
 
 <template>
-  <div class="text-center">
+  <div class="text-center text-base/3 my-2">
     <NuxtLink to="https://retskaffen.dk/" external>
-      www.retskaffen.dk
+      <div>www.retskaffen.dk</div>
+      <div class="italic">den danske kaffeelite</div>
     </NuxtLink>
   </div>
 </template>
