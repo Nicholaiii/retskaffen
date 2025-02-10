@@ -9,9 +9,9 @@ const { name, price, count = 1 } = defineProps<{
 <template>
   <div class="flex justify-between text-md/0">
     <div>{{name}}</div>
-    <div class="text-right">{{useDanskPris(price*count)}} kr</div>
+    <div class="text-right">{{ useDanskPris(price*count) }} kr</div>
   </div>
-  <div v-if="count > 1" class="ml-2">{{ count}} x {{ useDanskPris(price)}}</div>
+  <div v-if="count > 1" class="ml-2">{{ count}} x {{ useDanskPris(price) }}</div>
 </template>
 
 <style scoped>
