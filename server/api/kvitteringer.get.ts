@@ -6,7 +6,7 @@ const FornuftigeIndkøb: Array<[name: string, price: number, count?: number]> = 
   ['Coffee Collective Takesi (120g)', 300],
   ['Buddhas Kafferösteri Julebox', 587.34],
   ['Mazelab Altieri Geisha (50g)', 261.07],
-  ['minmax El Socorro Gesha (100g)', 156.67, 3],
+  ['minmax El Socorro Gesha (100g)', 195.85, 3],
   ['Special Guests Lost Origin Lot 71', 272],
 ]
 
