@@ -4,6 +4,7 @@
       <Logo class="mt-2" />
       <QR />
       <Date />
+      <KvitteringsTaeller />
       <ItemList />
       <Barcode />
       <Scan />

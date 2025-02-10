@@ -3,8 +3,8 @@ const formatted = useDateFormat(Date.now(), 'YYYY-MM-DD HH:mm:ss')
 </script>
 
 <template>
-  <div>
-    {{ formatted }}
+  <div class="text-base/6">
+    Dato: {{ formatted }}
   </div>
 </template>
 
