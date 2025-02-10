@@ -8,6 +8,7 @@ const FornuftigeIndkøb: Array<[name: string, price: number, count?: number]> = 
   ['Mazelab Altieri Geisha (50g)', 261.07],
   ['minmax El Socorro Gesha (100g)', 195.85, 3],
   ['Special Guests Lost Origin Lot 71', 272],
+  ['Rozali Janson Natural Gesha 201 (100g)', 267, 2],
 ]
 
 const betalingsMidler = [
