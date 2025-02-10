@@ -6,6 +6,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "db:generate": "drizzle-kit generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
@@ -14,8 +15,12 @@
     "@nuxt/ui": "3.0.0-alpha.12",
     "@nuxthub/core": "0.8.17",
     "@vueuse/nuxt": "12.5.0",
+    "drizzle-kit": "^0.30.4",
     "nuxt": "^3.15.4",
     "vue": "latest"
   },
-  "packageManager": "pnpm@10.2.1"
+  "packageManager": "pnpm@10.2.1",
+  "dependencies": {
+    "drizzle-orm": "^0.39.2"
+  }
 }

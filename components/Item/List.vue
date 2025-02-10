@@ -8,7 +8,7 @@ const FornuftigeIndkøb: Array<[name: string, price: number, count?: number]> = 
   ['Mazelab Altieri Geisha (50g)', 261.07]
 ]
 
-const tilfældigtElement = <T>(a: T[]): T => a[Math.floor(Math.random() * a.length)]
+const tilfældigtElement = <T>(a: readonly T[]): T => a[Math.floor(Math.random() * a.length)]
 
 const betalingsMidler = [
   'Kontant',
