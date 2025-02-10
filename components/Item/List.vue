@@ -17,7 +17,7 @@ const tilfældiggørAntal = <T>(a: readonly T[]): number =>
     a.length - (Math.floor(a.length/2))))
     + Math.ceil(a.length/2)
 
-const KvitteringsEmner = tilfældiggørListe(FornuftigeIndkøb).slice(0, tilfældiggørAntal(FornuftigeIndkøb))
+const KvitteringsEmner = ref(tilfældiggørListe(FornuftigeIndkøb).slice(0, tilfældiggørAntal(FornuftigeIndkøb)))
 
 const betalingsMidler = [
   'Kontant',
@@ -29,9 +29,9 @@ const betalingsMidler = [
   'Salte tårer'
 ] as const
 
-const total = FornuftigeIndkøb.reduce((acc, e) => e[1]*(e[2] ?? 1) + acc, 0)
-const moms = computed(() => total*0.2)
-const momsBasis = computed(() => total*0.8)
+const total = computed(() => KvitteringsEmner.value.reduce((acc, e) => e[1]*(e[2] ?? 1) + acc, 0))
+const moms = computed(() => total.value*0.2)
+const momsBasis = computed(() => total.value*0.8)
 </script>
 
 <template>
