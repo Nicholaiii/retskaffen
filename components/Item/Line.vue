@@ -11,7 +11,7 @@ const { name, price, count = 1 } = defineProps<{
     <div>{{name}}</div>
     <div class="text-right">{{useDanskPris(price*count)}} kr</div>
   </div>
-  <div v-if="count > 1" class="ml-2">{{ count}} x {{price}}</div>
+  <div v-if="count > 1" class="ml-2">{{ count}} x {{ useDanskPris(price)}}</div>
 </template>
 
 <style scoped>
