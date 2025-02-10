@@ -24,11 +24,7 @@ const betalingsMidler = [
 
 const tilfældigtElement = <T>(a: readonly T[]): T => a[Math.floor(Math.random() * a.length)]
 const tilfældiggørListe = <T>(a: readonly T[]): T[] => a.toSorted(() => Math.random() - 0.5)
-const tilfældiggørAntal = <T>(a: readonly T[]): number =>
-  Math.floor(
-    Math.random() *(
-    a.length - (Math.floor(a.length/2))))
-    + Math.ceil(a.length/2)
+const tilfældiggørAntal = <T>(a: readonly T[]): number => Math.floor(Math.random() * 4) + 4
 
 export default defineEventHandler(async () => {
   const db = useDrizzle()
