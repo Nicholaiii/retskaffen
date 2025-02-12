@@ -20,7 +20,7 @@
     "vue": "latest",
     "wrangler": "^3.107.3"
   },
-  "packageManager": "pnpm@10.2.1",
+  "packageManager": "pnpm@10.3.0",
   "dependencies": {
     "@cspell/dict-da-dk": "^4.0.3",
     "drizzle-orm": "^0.39.2"
