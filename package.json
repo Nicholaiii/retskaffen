@@ -23,7 +23,7 @@
   "packageManager": "pnpm@10.3.0",
   "dependencies": {
     "@cspell/dict-da-dk": "^4.0.3",
-    "drizzle-orm": "^0.39.2"
+    "drizzle-orm": "^0.45.0"
   },
   "pnpm": {
     "ignoredBuiltDependencies": [
